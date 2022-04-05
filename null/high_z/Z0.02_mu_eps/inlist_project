@@ -1,0 +1,151 @@
+&star_job
+
+create_pre_main_sequence_model = .true.
+
+! save a model at the end of the run
+save_model_when_terminate = .true.
+! save_model_filename = 'preMS-0.0001.mod'
+
+! display on-screen plots
+pgstar_flag = .false.
+
+! basic.net reaction rate factors
+num_special_rate_factors = 31
+
+reaction_for_special_factor(1) = 'r34_pp2' ! pp 
+special_rate_factor(1) = 1.0d0
+
+reaction_for_special_factor(2) = 'r34_pp3' ! pp
+special_rate_factor(2) = 1.0d0
+
+reaction_for_special_factor(3) = 'r_c12_ag_o16' ! burn c12
+special_rate_factor(3) = 1.0d0 ! 1 for CNO rates
+
+reaction_for_special_factor(4) = 'r_h1_he3_wk_he4' ! pp
+special_rate_factor(4) = 1.0d0
+
+reaction_for_special_factor(5) = 'r_he3_he3_to_h1_h1_he4' ! pp
+special_rate_factor(5) = 1.0d0
+
+reaction_for_special_factor(6) = 'r_he4_he4_he4_to_c12' ! triple-alpha
+special_rate_factor(6) = 1.0d0
+
+reaction_for_special_factor(7) = 'r_ne20_ag_mg24' ! burn ne20
+special_rate_factor(7) = 1.0d0 ! 1 for CNO rates
+
+reaction_for_special_factor(8) = 'r_o16_ag_ne20' ! burn o16
+special_rate_factor(8) = 1.0d0 ! 1 for CNO rates
+
+reaction_for_special_factor(9) = 'rbe7ec_li7_aux' ! pp
+special_rate_factor(9) = 1.0d0
+
+reaction_for_special_factor(10) = 'rbe7pg_b8_aux' ! pp
+special_rate_factor(10) = 1.0d0
+
+reaction_for_special_factor(11) = 'rc12_to_n14' ! cno 
+special_rate_factor(11) = 1.0d0
+
+reaction_for_special_factor(12) = 'rc12ap_aux' ! burn c12
+special_rate_factor(12) = 1.0d0 ! 1 for CNO rates
+
+reaction_for_special_factor(13) = 'rc12ap_to_o16' ! burn c12 (typo)
+special_rate_factor(13) = 1.0d0 ! 1 for CNO rates
+
+reaction_for_special_factor(14) = 'rf19pa_aux' ! cno 
+special_rate_factor(14) = 1.0d0
+
+reaction_for_special_factor(15) = 'rf19pg_aux' ! cno
+special_rate_factor(15) = 1.0d0
+
+reaction_for_special_factor(16) = 'rn14_to_c12' ! cno
+special_rate_factor(16) = 1.0d0
+
+reaction_for_special_factor(17) = 'rn14_to_o16' ! cno
+special_rate_factor(17) = 1.0d0
+
+reaction_for_special_factor(18) = 'rn14ag_lite' ! burn n14
+special_rate_factor(18) = 1.0d0 ! 1 for CNO rates
+
+reaction_for_special_factor(19) = 'rn14pg_aux' ! cno
+special_rate_factor(19) = 1.0d0
+
+reaction_for_special_factor(20) = 'rn15pa_aux' ! burn n14
+special_rate_factor(20) = 1.0d0
+                                          
+reaction_for_special_factor(21) = 'rn15pg_aux' ! burn n14
+special_rate_factor(21) = 1.0d0
+
+reaction_for_special_factor(22) = 'rna23pa_aux' ! burn na23
+special_rate_factor(22) = 1.0d0
+
+reaction_for_special_factor(23) = 'rna23pg_aux' ! burn na23
+special_rate_factor(23) = 1.d0
+
+reaction_for_special_factor(24) = 'rne20ap_aux' ! other
+special_rate_factor(24) = 1.0d0 ! 1 for CNO rates
+
+reaction_for_special_factor(25) = 'rne20ap_to_mg24' ! burn ne20
+special_rate_factor(25) = 1.0d0 ! 1 for CNO rates
+
+reaction_for_special_factor(26) = 'ro16_to_n14' ! cno
+special_rate_factor(26) = 1.0d0
+
+reaction_for_special_factor(27) = 'ro16ap_aux' ! burn o16
+special_rate_factor(27) = 1.0d0 ! 1 for CNO rates
+
+reaction_for_special_factor(28) = 'ro16ap_to_ne20' ! burn o16
+special_rate_factor(28) = 1.0d0 ! 1 for CNO rates
+
+reaction_for_special_factor(29) = 'ro16gp_aux' ! burn o16
+special_rate_factor(29) = 1.0d0
+
+reaction_for_special_factor(30) = 'rpep_to_he3' ! pp
+special_rate_factor(30) = 1.0d0
+
+reaction_for_special_factor(31) = 'rpp_to_he3' ! pp
+special_rate_factor(31) = 1.0d0
+
+/ !end of star_job namelist
+
+&controls
+
+! starting specifications
+initial_mass = 15d0 ! in Msun units
+Zbase = 0.02
+initial_z = 0.02 ! 0.02d0 default
+initial_y = 0.23d0
+
+! stop when the star nears ZAMS (Lnuc/L > 0.99)
+! Lnuc_div_L_zams_limit = 0.99d0
+! stop_near_zams = .true.
+
+! options for energy conservation (see MESA V, Section 3)
+use_dedt_form_of_energy_eqn = .true.
+use_gold_tolerances = .true.
+
+! stop when the center mass fraction of c12 drops below this limit
+xa_central_lower_limit_species(1) = 'c12'
+xa_central_lower_limit(1) = 1d-8
+
+history_interval = 1
+mesh_delta_coeff = 0.5
+varcontrol_target = 1.d-4
+
+overshoot_scheme = 'step'    !  Possible values: exponential, step
+overshoot_zone_type = 'any' !  Possible values: burn_H, burn_He, burn_Z, nonburn, any
+overshoot_zone_loc = 'any'  !  Possible values: core, shell, any
+overshoot_bdy_loc = 'any'   !  Possible values: bottom, top, any`
+
+overshoot_f = 0.345
+overshoot_f0 = 0.01
+
+! use EOS routine
+use_other_eos = .true.
+
+! wind mass loss
+hot_wind_scheme = 'Dutch'
+hot_wind_full_on_T = 1d0
+cool_wind_full_on_T = 0d0
+Dutch_scaling_factor = 0.8
+
+/ ! end of controls namelist

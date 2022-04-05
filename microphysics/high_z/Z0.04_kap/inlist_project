@@ -1,0 +1,55 @@
+&star_job
+
+create_pre_main_sequence_model = .false.
+
+! save a model at the end of the run
+save_model_when_terminate = .true.
+! save_model_filename = 'preMS-0.02.mod'
+
+! display on-screen plots
+pgstar_flag = .false.
+
+/ !end of star_job namelist
+
+&controls
+
+! starting specifications
+initial_mass = 15d0 ! in Msun units
+Zbase = 0.02
+initial_z = 0.02 ! 0.02d0 default
+initial_y = 0.23d0
+
+! stop when the star nears ZAMS (Lnuc/L > 0.99)
+! Lnuc_div_L_zams_limit = 0.99d0
+! stop_near_zams = .true.
+
+! options for energy conservation (see MESA V, Section 3)
+use_dedt_form_of_energy_eqn = .true.
+use_gold_tolerances = .true.
+
+! stop when the center mass fraction of c12 drops below this limit
+xa_central_lower_limit_species(1) = 'c12'
+xa_central_lower_limit(1) = 1d-8
+
+history_interval = 1
+mesh_delta_coeff = 0.5
+varcontrol_target = 1.d-4
+
+overshoot_scheme = 'step'    !  Possible values: exponential, step
+overshoot_zone_type = 'any' !  Possible values: burn_H, burn_He, burn_Z, nonburn, any
+overshoot_zone_loc = 'any'  !  Possible values: core, shell, any
+overshoot_bdy_loc = 'any'   !  Possible values: bottom, top, any`
+
+overshoot_f = 0.345
+overshoot_f0 = 0.01
+
+! use opacity routine
+use_other_kap = .true.
+
+! wind mass loss
+hot_wind_scheme = 'Dutch'
+hot_wind_full_on_T = 1d0
+cool_wind_full_on_T = 0d0
+Dutch_scaling_factor = 0.8
+
+/ ! end of controls namelist

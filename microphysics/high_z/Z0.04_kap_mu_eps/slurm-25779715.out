@@ -1,0 +1,31 @@
+DATE: 2021-12-03
+TIME: 16:29:07
+At line 655 of file ../private/star_job_ctrls_io.f90
+Fortran runtime error: Cannot match namelist object name basic.net
+
+Error termination. Backtrace:
+#0  0x2aaaad16d9b7 in finalize_transfer
+	at /home/user/sdk2-tmp/build/gcc/libgfortran/io/transfer.c:4072
+#1  0x60d3bf in __star_job_ctrls_io_MOD_read_star_job_file
+	at ../private/star_job_ctrls_io.f90:655
+#2  0x60660d in __star_job_ctrls_io_MOD_read_star_job_file
+	at ../private/star_job_ctrls_io.f90:691
+#3  0x60d560 in __star_job_ctrls_io_MOD_do_read_star_job
+	at ../private/star_job_ctrls_io.f90:613
+#4  0x415d9f in __star_lib_MOD_read_star_job
+	at ../public/star_lib.f90:88
+#5  0x417d57 in __run_star_support_MOD_do_read_star_job
+	at ../job/run_star_support.f90:1791
+#6  0x40df06 in run
+	at ../src/run.f:11
+#7  0x40df6f in main
+	at ../src/run.f:2
+
+
+
+
+Failed while trying to read control namelist file: inlist_project
+Perhaps the following runtime error message will help you find the problem.
+
+DATE: 2021-12-03
+TIME: 16:29:22
