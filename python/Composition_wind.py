@@ -80,9 +80,9 @@ fig, ax1 = plt.subplots(ncols=1,nrows=1,sharex=True,sharey=True,figsize=(6.5,4.5
 color = plt.cm.Reds(np.linspace(0,1,12))
 
 ax1.plot(R0,L0,c='k',label='X=0.75,Y=0.23,Z=0.02',linewidth=width_fiducial)
-ax1.plot(R1,L1,c=color[11],label='X=0.64,Y=0.32,Z=0.04 (I)',linewidth=width_mp,linestyle=':')
-ax1.plot(R2,L2,c=color[9],label='X=0.73,Y=0.23,Z=0.04 (II)',linewidth=width_mp,linestyle='--')
-ax1.plot(R3,L3,c=color[4],label='X=0.75,Y=0.21,Z=0.04 (III)',linewidth=width_mp,linestyle='-.')
+ax1.plot(R1,L1,c=color[11],label='X=0.64,Y=0.32,Z=0.04 (Pols+)',linewidth=width_mp,linestyle=':')
+ax1.plot(R2,L2,c=color[9],label='X=0.73,Y=0.23,Z=0.04 (Fix Y)',linewidth=width_mp,linestyle='--')
+ax1.plot(R3,L3,c=color[4],label='X=0.75,Y=0.21,Z=0.04 (Fix X)',linewidth=width_mp,linestyle='-.')
 
 ax1.set_ylim(4.1,5.2)
 ax1.set_xlim(0.5,3.2)
