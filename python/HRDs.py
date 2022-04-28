@@ -252,39 +252,39 @@ l_hay_low_z = 5.02
 
 p=50
 
-h0 = mr.MesaData('data/Z2e-2/LOGS/history.data')
+h0 = mr.MesaData('data/high_Z_2Z/Z2e-2/LOGS/history.data')
 Teff0, R0, L0 = choseMS(h0)
 ax1.plot(R0, L0, color='k', zorder=0., label='$Z=0.02$ (model 1)', linewidth=width_fiducial)
 ax2.plot(R0, L0, color='k', zorder=0., linewidth=width_fiducial)
 
-h_mu = mr.MesaData('data/mu_0.04/LOGS/history.data')
+h_mu = mr.MesaData('data/high_Z_2Z/Z2e-2_Zmu4e-2/LOGS/history.data')
 Teff_mu, R_mu, L_mu = choseMS(h_mu)
 ax1.plot(R_mu, L_mu, color='limegreen', zorder=1, linestyle='--',linewidth=width_mp, label=r'$Z_{\mu}=0.04$ (model 2)')
 
-h_kap = mr.MesaData('data/kap_0.04/LOGS/history.data')
+h_kap = mr.MesaData('data/high_Z_2Z/Z2e-2_Zkap4e-2/LOGS/history.data')
 Teff_k, R_k, L_k = choseMS(h_kap)
 ax1.plot(R_k, L_k, color='mediumblue', linestyle='--',zorder=1, linewidth=width_mp, label=r'$Z_{\kappa}=0.04$ (model 3)')
 
-h_eps_0 = mr.MesaData('data/eps_f_burn/LOGS/history.data')
+h_eps_0 = mr.MesaData('data/high_Z_2Z/Z2e-2_Zeps4e-2/LOGS/history.data')
 c_h1 = h_eps_0.center_h1
 
 Teff_t, R_t, L_t = choseMS(h_eps_0)
 ax1.plot(R_t, L_t, color='palevioletred', zorder=1, linestyle='--',linewidth=width_mp, label=r'$Z_{\epsilon}=0.04$ (model 4)')
 
-h_km = mr.MesaData('data/kap_mu_0.04/LOGS/history.data')
+h_km = mr.MesaData('data/high_Z_2Z/Z2e-2_Zkap_mu4e-2/LOGS/history.data')
 Teff_km, R_km, L_km = choseMS(h_km)
 ax2.plot(R_km, L_km, color='darkorange', zorder=1, linestyle='--',linewidth=width_mp, label=r'$Z_{\mu,\kappa}=0.04$ (model 5)')
 
-h_em = mr.MesaData('data/eps_mu_f_burn/LOGS/history.data')
+h_em = mr.MesaData('data/high_Z_2Z/Z2e-2_Zmu_eps4e-2/LOGS/history.data')
 Teff_em, R_em, L_em = choseMS(h_em)
 ax2.plot(R_em, L_em, color='magenta', zorder=1, linestyle='--',linewidth=width_mp, label=r'$Z_{\mu,\epsilon}=0.04$ (model 6)')
 
-h_ke = mr.MesaData('data/eps_kap_f_burn/LOGS/history.data')
+h_ke = mr.MesaData('data/high_Z_2Z/Z2e-2_Zkap_eps4e-2/LOGS/history.data')
 # print(min(h_ke.center_h1))
 Teff_ke, R_ke, L_ke = choseMS(h_ke)
 ax2.plot(R_ke, L_ke, color='dodgerblue', zorder=1, linestyle='--',linewidth=width_mp, label=r'$Z_{\kappa,\epsilon}=0.04$ (model 7)')
 
-h_3 = mr.MesaData('data/eps_kap_mu_f_burn/LOGS/history.data')
+h_3 = mr.MesaData('data/high_Z_2Z/Z2e-2_Zkap_mu_eps4e-2/LOGS/history.data')
 Teff_3, R_3, L_3 = choseMS(h_3)
 ax2.plot(R_3, L_3, color='dimgray', zorder=1, linestyle='--',linewidth=width_mp, label=r'$Z_{\mu,\kappa,\epsilon}=0.04$ (model 8)')
 
@@ -417,42 +417,42 @@ ax2.set_ylabel('log$_{10}$(L/L$_{\odot}$)',fontsize=20)
 ax2.set_xlabel('log$_{10}$(R/R$_{\odot}$)',fontsize=20)
 
 
-h0l = mr.MesaData('data/Z0.001_overshoot_any/LOGS/history.data')
+h0l = mr.MesaData('data/low_Z_2Z/Z1e-3/LOGS/history.data')
 Teff0l, R0l, L0l = choseMS(h0l)
 ax3.plot(R0l, L0l, color='k', zorder=0, label='$Z=10^{-3}$ (model 10)', linewidth=width_fiducial)
 ax4.plot(R0l, L0l, color='k', zorder=0., linewidth=width_fiducial)
 
-hl_mu = mr.MesaData('data/Z1e-3_Zmu_2e-3/LOGS/history.data')
+hl_mu = mr.MesaData('data/low_Z_2Z/Z1e-3_Zmu_2e-3/LOGS/history.data')
 Teff_mul, R_mul, L_mul = choseMS(hl_mu)
 ax3.plot(R_mul, L_mul, color='limegreen', zorder=1, linestyle='--', linewidth=width_mp, label=r'$Z_{\mu}=2\times10^{-3}$ (model 11)')
 
-hl_kap = mr.MesaData('data/Z1e-3_Zkap_2e-3/LOGS/history.data')
+hl_kap = mr.MesaData('data/low_Z_2Z/Z1e-3_Zkap_2e-3/LOGS/history.data')
 Teff_kl, R_kl, L_kl = choseMS(hl_kap)
 ax3.plot(R_kl, L_kl, color='mediumblue', zorder=1, linestyle='--', linewidth=width_mp, label=r'$Z_{\kappa}=2\times10^{-3}$ (model 12)')
 
-hl_eps_0 = mr.MesaData('data/Z1e-3_Zeps_2e-3/LOGS/history.data')
+hl_eps_0 = mr.MesaData('data/low_Z_2Z/Z1e-3_Zeps_2e-3/LOGS/history.data')
 Teff_tl, R_tl, L_tl = choseMS(hl_eps_0)
 ax3.plot(R_tl, L_tl, color='palevioletred', zorder=1,linestyle='--',  linewidth=width_mp, label=r'$Z_{\epsilon}=2\times10^{-3}$ (model 13)')
 
-hl_km = mr.MesaData('data/Z1e-3_Zkap_mu_2e-3/LOGS/history.data')
+hl_km = mr.MesaData('data/low_Z_2Z/Z1e-3_Zkap_mu_2e-3/LOGS/history.data')
 Teff_kml, R_kml, L_kml = choseMS(hl_km)
 ax4.plot(R_kml, L_kml, color='darkorange', zorder=1, linestyle='--', linewidth=width_mp, label=r'$Z_{\mu,\kappa}=2\times10^{-3}$ (model 14)')
 
-hl_em = mr.MesaData('data/Z1e-3_Zmu_eps_2e-3/LOGS/history.data')
+hl_em = mr.MesaData('data/low_Z_2Z/Z1e-3_Zmu_eps_2e-3/LOGS/history.data')
 Teff_eml, R_eml, L_eml = choseMS(hl_em)
 ax4.plot(R_eml, L_eml, color='magenta', zorder=1, linestyle='--', linewidth=width_mp, label=r'$Z_{\mu,\epsilon}=2\times10^{-3}$ (model 15)')
 
-hl_ke = mr.MesaData('data/Z1e-3_Zkap_eps_2e-3/LOGS/history.data')
+hl_ke = mr.MesaData('data/low_Z_2Z/Z1e-3_Zkap_eps_2e-3/LOGS/history.data')
 # print(len(hl_ke.center_c12))
 # print(hl_ke.center_c12)
 Teff_kel, R_kel, L_kel = choseMS(hl_ke)
 ax4.plot(R_kel, L_kel, color='dodgerblue', zorder=1, linestyle='--', linewidth=width_mp, label=r'$Z_{\kappa,\epsilon}=2\times10^{-3}$ (model 16)')
 
-hl_3 = mr.MesaData('data/Z1e-3_Zkap_mu_eps_2e-3/LOGS/history.data')
+hl_3 = mr.MesaData('data/low_Z_2Z/Z1e-3_Zkap_mu_eps_2e-3/LOGS/history.data')
 Teff_3l, R_3l, L_3l = choseMS(hl_3)
 ax4.plot(R_3l, L_3l, color='dimgray', zorder=1, linestyle='--', linewidth=width_mp, label=r'$Z_{\mu,\kappa,\epsilon}=2\times10^{-3}$ (model 17)')
 
-h1l = mr.MesaData('data/Z2e-3_wind1e-3_use_min/LOGS/history.data')
+h1l = mr.MesaData('data/low_Z_2Z/Z2e-3_wind1e-3_use_min/LOGS/history.data')
 
 Teff1l, R1l, L1l = choseMS(h1l)
 ax3.plot(R1l, L1l, color='maroon', zorder=0, label=r'$Z=2\times10^{-3}$ (model 18)', linewidth=width_fiducial)
