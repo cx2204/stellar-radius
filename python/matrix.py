@@ -12,33 +12,30 @@ def entry(r_h_til,r_h,r_l):
 
 if z == 0.001:
     L_c = 5.02
-    # h0 = mr.MesaData('data/15m_z0.0001_conv_dat_new/LOGS/history.data') # load low Z model
-    # h0 = mr.MesaData('data/Z0.001_overshoot_any/LOGS/history.data') # load low Z model
     h0 = mr.MesaData('data/Z1e-3/LOGS/history.data') # load low Z model
-    # h1 = mr.MesaData('data/15m_z0.0002_wind0.0001/LOGS/history.data') # load high Z model
     #
     # ---------- Z=1e-3 (null matrices)
-    # h1 = mr.MesaData('data/Z1e-3_wind1e-3_use_min/LOGS/history.data') # load high Z model
-    # h_ee = mr.MesaData('data/Z1e-3_eps/LOGS/history.data')
-    # h_kk = mr.MesaData('data/Z1e-3_kap/LOGS/history.data')
-    # h_mm = mr.MesaData('data/Z1e-3_mu/LOGS/history.data')
-    # h_mk = mr.MesaData('data/Z1e-3_kap_mu/LOGS/history.data')
-    # h_em = mr.MesaData('data/Z1e-3_mu_eps/LOGS/history.data')
-    # h_ek = mr.MesaData('data/Z1e-3_kap_eps/LOGS/history.data')
+    # h1 = mr.MesaData('data/Low_Z_null/Z1e-3_wind1e-3_use_min/LOGS/history.data') # load high Z model
+    # h_ee = mr.MesaData('data/Low_Z_null/Z1e-3_eps/LOGS/history.data')
+    # h_kk = mr.MesaData('data/Low_Z_null/Z1e-3_kap/LOGS/history.data')
+    # h_mm = mr.MesaData('data/Low_Z_null/Z1e-3_mu/LOGS/history.data')
+    # h_mk = mr.MesaData('data/Low_Z_null/Z1e-3_kap_mu/LOGS/history.data')
+    # h_em = mr.MesaData('data/Low_Z_null/Z1e-3_mu_eps/LOGS/history.data')
+    # h_ek = mr.MesaData('data/Low_Z_null/Z1e-3_kap_eps/LOGS/history.data')
     # #
-    # h_ekm = mr.MesaData('data/Z1e-3_kap_mu_eps/LOGS/history.data')
+    # h_ekm = mr.MesaData('data/Low_Z_null/Z1e-3_kap_mu_eps/LOGS/history.data')
 
     # ---------- Z=2e-3 (result matrices)
-    h1 = mr.MesaData('data/Z2e-3_wind1e-3_use_min/LOGS/history.data') # load high Z model
+    h1 = mr.MesaData('data/low_Z_2Z/Z2e-3_wind1e-3_use_min/LOGS/history.data') # load high Z model
     # h1 = mr.MesaData('data/Z_V/LOGS/history.data') # change h1 file to produce numbers in Table 2 and 3
-    h_ee = mr.MesaData('data/Z1e-3_Zeps_2e-3/LOGS/history.data')
-    h_kk = mr.MesaData('data/Z1e-3_Zkap_2e-3/LOGS/history.data')
-    h_mm = mr.MesaData('data/Z1e-3_Zmu_2e-3/LOGS/history.data')
-    h_mk = mr.MesaData('data/Z1e-3_Zkap_mu_2e-3/LOGS/history.data')
-    h_em = mr.MesaData('data/Z1e-3_Zmu_eps_2e-3/LOGS/history.data')
-    h_ek = mr.MesaData('data/Z1e-3_Zkap_eps_2e-3/LOGS/history.data')
+    h_ee = mr.MesaData('data/low_Z_2Z/Z1e-3_Zeps_2e-3/LOGS/history.data')
+    h_kk = mr.MesaData('data/low_Z_2Z/Z1e-3_Zkap_2e-3/LOGS/history.data')
+    h_mm = mr.MesaData('data/low_Z_2Z/Z1e-3_Zmu_2e-3/LOGS/history.data')
+    h_mk = mr.MesaData('data/low_Z_2Z/Z1e-3_Zkap_mu_2e-3/LOGS/history.data')
+    h_em = mr.MesaData('data/low_Z_2Z/Z1e-3_Zmu_eps_2e-3/LOGS/history.data')
+    h_ek = mr.MesaData('data/low_Z_2Z/Z1e-3_Zkap_eps_2e-3/LOGS/history.data')
     #
-    h_ekm = mr.MesaData('data/Z1e-3_Zkap_mu_eps_2e-3/LOGS/history.data')
+    h_ekm = mr.MesaData('data/low_Z_2Z/Z1e-3_Zkap_mu_eps_2e-3/LOGS/history.data')
     
     ############## uncomment the epoch to produce the corresponding matrix
 
@@ -108,27 +105,27 @@ if z == 0.02:
     # h1 = mr.MesaData('data/Z0.04_Zwind0.0/LOGS/history.data')  # load high Z model
     # h1 = mr.MesaData('data/Z_II/LOGS/history.data')  # load high Z model
     # h1 = mr.MesaData('data/Zwind_0.04/LOGS/history.data')  # load high Z model
-    h1 = mr.MesaData('data/Z0.04_wind0.02_use_min/LOGS/history.data')  # load high Z model
-    # h1 = mr.MesaData('data/Z0.04_hardcode_wind0.0/LOGS/history.data')  # load high Z model
-    h_ee = mr.MesaData('data/Z2e-2_Zeps4e-2/LOGS/history.data') # finished at C-depletion
-    h_kk = mr.MesaData('data/Z2e-2_Zkap4e-2/LOGS/history.data') # X(C12) at the end was <1e-6
-    h_mm = mr.MesaData('data/Z2e-2_Zmu4e-2/LOGS/history.data') # X(C12) at the end was 2e-6
-    h_mk = mr.MesaData('data/Z2e-2_Zkap_mu4e-2/LOGS/history.data') # finished at C-depletion
-    h_em = mr.MesaData('data/Z2e-2_Zmu_eps4e-2/LOGS/history.data') # finished at C-depletion
-    h_ek = mr.MesaData('data/Z2e-2_Zkap_eps4e-2/LOGS/history.data') # finished at C-depletion
-    h_ekm = mr.MesaData('data/Z2e-2_Zkap_mu_eps4e-2/LOGS/history.data') # finished at C-depletion
+    h1 = mr.MesaData('data/high_Z_2Z/Z0.04_wind0.02_use_min/LOGS/history.data')  # load high Z model
+    # h1 = mr.MesaData('data/high_Z_2Z/Z0.04_hardcode_wind0.0/LOGS/history.data')  # load high Z model
+    h_ee = mr.MesaData('data/high_Z_2Z/Z2e-2_Zeps4e-2/LOGS/history.data') # finished at C-depletion
+    h_kk = mr.MesaData('data/high_Z_2Z/Z2e-2_Zkap4e-2/LOGS/history.data') # X(C12) at the end was <1e-6
+    h_mm = mr.MesaData('data/high_Z_2Z/Z2e-2_Zmu4e-2/LOGS/history.data') # X(C12) at the end was 2e-6
+    h_mk = mr.MesaData('data/high_Z_2Z/Z2e-2_Zkap_mu4e-2/LOGS/history.data') # finished at C-depletion
+    h_em = mr.MesaData('data/high_Z_2Z/Z2e-2_Zmu_eps4e-2/LOGS/history.data') # finished at C-depletion
+    h_ek = mr.MesaData('data/high_Z_2Z/Z2e-2_Zkap_eps4e-2/LOGS/history.data') # finished at C-depletion
+    h_ekm = mr.MesaData('data/high_Z_2Z/Z2e-2_Zkap_mu_eps4e-2/LOGS/history.data') # finished at C-depletion
 
     # ---------- Z=0.02 (null matrices)
-    # h1 = mr.MesaData('data/Z0.02_wind0.02_use_min/LOGS/history.data')  # load high Z model
-    # h_ee = mr.MesaData('data/Z2e-2_Zeps2e-2/LOGS/history.data')
-    # h_kk = mr.MesaData('data/Z2e-2_Zkap2e-2/LOGS/history.data')
-    # h_mm = mr.MesaData('data/Z2e-2_Zmu2e-2/LOGS/history.data')
+    # h1 = mr.MesaData('data/High_Z_null/Z0.02_wind0.02_use_min/LOGS/history.data')  # load high Z model
+    # h_ee = mr.MesaData('data/High_Z_null/Z2e-2_Zeps2e-2/LOGS/history.data')
+    # h_kk = mr.MesaData('data/High_Z_null/Z2e-2_Zkap2e-2/LOGS/history.data')
+    # h_mm = mr.MesaData('data/High_Z_null/Z2e-2_Zmu2e-2/LOGS/history.data')
     #
-    # h_mk = mr.MesaData('data/Z2e-2_Zkap_mu2e-2/LOGS/history.data')
-    # h_em = mr.MesaData('data/Z2e-2_Zmu_eps2e-2/LOGS/history.data')
-    # h_ek = mr.MesaData('data/Z2e-2_Zkap_eps2e-2/LOGS/history.data')
+    # h_mk = mr.MesaData('data/High_Z_null/Z2e-2_Zkap_mu2e-2/LOGS/history.data')
+    # h_em = mr.MesaData('data/High_Z_null/Z2e-2_Zmu_eps2e-2/LOGS/history.data')
+    # h_ek = mr.MesaData('data/High_Z_null/Z2e-2_Zkap_eps2e-2/LOGS/history.data')
     # #
-    # h_ekm = mr.MesaData('data/Z2e-2_Zkap_mu_eps2e-2/LOGS/history.data')
+    # h_ekm = mr.MesaData('data/High_Z_null/Z2e-2_Zkap_mu_eps2e-2/LOGS/history.data')
     
     ############## uncomment the epoch to produce the corresponding matrix
 
