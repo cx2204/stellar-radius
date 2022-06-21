@@ -7,4 +7,4 @@ All models are run with MESA v12778.
   - "null" directory includes results in the appendices
 
 To make all the figures, see directory "python". 
-Data used to make the figures are available on [Zenodo](https://doi.org/10.5281/zenodo.6584496).
+Data used to make the figures are available on [Zenodo](https://doi.org/10.5281/zenodo.6621643).
